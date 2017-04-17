@@ -61,6 +61,45 @@ Type nav>ul>li*2 then hit tab to auto create Nav with UL!!!!
 
 Link to components:
 
- <li><a href="" [routerLink]="['/dashboard']">Dashboard</a></li>
- <li><a href="" [routerLink]="['/customer']">Customer</a></li>
+ <a href="" [routerLink]="['/dashboard']">Dashboard</a>
+ <a href="" [routerLink]="['/customer']">Customer</a>
 
+Add new module:
+
+ng g m admin --routing -d (dry run)
+ng g m admin --routing 
+
+Add new components within admin:
+
+ng g c admin
+
+ng g c admin/email-blast 
+
+ng g c admin/users
+
+then go to app.module.ts:
+
+and add in AdminModule (right above AppRoutingModule) + import @ top of page.....
+
+..then in admin-routing.module.ts:
+
+create object with paths + import @ top of file:
+
+  {
+    path: 'admin', 
+    component: AdminComponent
+  }
+
+
+Create/add router outlet in admin.component.html:
+
+<router-outlet></router-outlet>
+
+In admin-routing.module.ts:
+
+add child component paths + import @ top of file:
+
+children: [
+  {path: '', component: UsersComponent},
+  {path: 'blast', component: EmailBlastComponent}
+]
