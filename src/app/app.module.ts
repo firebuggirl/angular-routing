@@ -7,18 +7,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CustomerComponent } from './customer/customer.component';
-import { AdminModule } from "app/admin/admin.module";
+
+import { AdminModule } from './admin/admin.module';
+import { MaterialModule } from '@angular/material';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    CustomerComponent
+    CustomerComponent,
+ 
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    MaterialModule,
     AdminModule,
     AppRoutingModule
   ],

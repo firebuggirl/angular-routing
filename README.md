@@ -103,3 +103,90 @@ children: [
   {path: '', component: UsersComponent},
   {path: 'blast', component: EmailBlastComponent}
 ]
+
+Creat dist folder:
+
+ng build
+
+then...
+
+npm i source-map-explorer --save-dev
+
+...to see what is in builds...
+
+./node_modules/.bin/source-map-explorer dist/main.bundle.js
+
+./node_modules/.bin/source-map-explorer dist/vendor.bundle.js
+
+run ng build --aot
+
+...then re-run
+
+./node_modules/.bin/source-map-explorer dist/vendor.bundle.js
+
+to see diff in file sizes
+
+ng build -help
+
+run:
+
+ng build --prod  ..for AOT, uglification and tree-shaking
+
+then run:
+
+./node_modules/.bin/source-map-explorer dist/vendor + tab 
+
+...then check other bundles.....etc..
+
+..to see reduction in bundle size....BUT prompt says that there is 
+no source map...so to generate prod with map run:
+
+ng build --prod --sm 
+
+------------------
+
+ng serve --help
+
+options:
+
+--open or -o
+
+--port or -p
+
+--live-reload or -lr
+
+--ssl  serving https
+
+--proxy-config or -pc 
+
+------------------------------
+
+EX:
+
+run:
+ ng serve -p 8626 -o //change port
+
+ ng serve -p 8626 -o -lr false //without live reload
+
+ ng serve --prod -o //does full prod build in memory + launches in browser...for testing prod build
+
+ To work outside of/cancel CLI:
+
+ run:
+
+ ng eject  //nope!
+
+ --------------------
+
+ Adding Angular material:
+
+ npm i @angular/material --save
+
+ NOTE: if have version "@angular/material": "^2.0.0-beta.3"" also need to install 
+ "@angular/animations" --save When full (ie., not beta) version is out, then update
+
+..still not working....app will not compile!
+
+ then import in app.module + import in styles.css + add button and icon to app.component.html (from angular/material)
+
+
