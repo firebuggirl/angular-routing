@@ -185,7 +185,7 @@ run:
  NOTE: if have version "@angular/material": "^2.0.0-beta.3"" also need to install 
  "@angular/animations" --save When full (ie., not beta) version is out, then update
 
-..still not working....app will not compile!
+https://material.angular.io/guide/getting-started
 
  then import in app.module + import in styles.css + add button and icon to app.component.html (from angular/material)
 
